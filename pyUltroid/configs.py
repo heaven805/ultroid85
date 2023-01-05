@@ -20,21 +20,21 @@ except ImportError:
 class Var:
     # mandatory
     API_ID = (
-        int(sys.argv[1]) if len(sys.argv) > 1 else config("API_ID", default=6, cast=int)
+        int(sys.argv[1]) if len(sys.argv) > 1 else config("API_ID", default="22165592")
     )
     API_HASH = (
         sys.argv[2]
         if len(sys.argv) > 2
-        else config("API_HASH", default="eb06d4abfb49dc3eeb1aeb98ae0f581e")
+        else config("API_HASH", default="aa2886eda514d8beaa98695cfe3060ff")
     )
-    SESSION = sys.argv[3] if len(sys.argv) > 3 else config("SESSION", default=None)
+    SESSION = sys.argv[3] if len(sys.argv) > 3 else config("SESSION", default="1AZWarzkBuytpK2B6YRdYGfn2-pYxQSNrxycYQsQBphrPdZvlGbI91zERv2X4CRpUU54oJhUXqlAJHcRI6acQyg4YFSeyC7g8mWR2pgneQrtD4fq8zQdWslJFOOa7tvTEDS_FYbSyx8meBnPfrvfrBKxBfQun5PSLxfXioFw3aYjgzicwp1d3tQjzIa2WEuQc37km5OUM8TmSBQ6LPQGA7ZaZpFDtFsCdRxoH5KpqLDT_3KNRRUzfOnMHijqzwR025KZbmAUggYI2Ex3Gbf1jWo9LxbNqaLIMZDjpDtgNxlImZAYjh1v1X7ba1ggBQTwKFqH6VLy2aXfHiL5JGfu_py6fsJ67hkg=")
     REDIS_URI = (
         sys.argv[4]
         if len(sys.argv) > 4
-        else (config("REDIS_URI", default=None) or config("REDIS_URL", default=None))
+        else (config("REDIS_URI", default="redis-13617.c212.ap-south-1-1.ec2.cloud.redislabs.com:13617") or config("REDIS_URL", default=None))
     )
     REDIS_PASSWORD = (
-        sys.argv[5] if len(sys.argv) > 5 else config("REDIS_PASSWORD", default=None)
+        sys.argv[5] if len(sys.argv) > 5 else config("REDIS_PASSWORD", default="dev")
     )
     # extras
     BOT_TOKEN = config("BOT_TOKEN", default=None)
